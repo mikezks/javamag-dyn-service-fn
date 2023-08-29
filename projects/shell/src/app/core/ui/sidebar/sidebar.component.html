@@ -1,0 +1,22 @@
+<div class="sidebar-wrapper">
+  <div class="logo">
+    <a href="http://angulararchitects.io" class="simple-text logo-mini">
+      <div class="logo-image-small">
+        <img src="assets/paper-design/angular2-logo.png" />
+      </div>
+    </a>
+    <a href="http://angulararchitects.io" class="simple-text logo-normal">
+      Flights 42
+    </a>
+  </div>
+  
+  <app-dyn-ui-nav [navItems]="navItems" />
+
+  <app-dyn-ui-widget
+    *ngFor="let widget of connect.state$ | ngrxPush"
+    [title]="widget.title"
+    [config]="widget.toggles"
+    (toggle)="connect.toggle($event)"
+  />
+
+</div>

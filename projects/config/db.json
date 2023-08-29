@@ -1,0 +1,57 @@
+{
+  "discovery": [
+    {
+      "id": 1,
+      "key": "service-flight",
+      "type": "module",
+      "remoteEntry": "http://localhost:4530/remoteEntry.js",
+      "exposedModule": "./service"
+    },
+    {
+      "id": 2,
+      "key": "fn-validate-passenger-status",
+      "type": "module",
+      "remoteEntry": "http://localhost:4540/remoteEntry.js",
+      "exposedModule": "./fn"
+    }
+  ],
+  "customizing": [
+    {
+      "id": 1,
+      "category": "services",
+      "scope": "service-flight",
+      "active": false
+    },
+    {
+      "id": 2,
+      "category": "functions",
+      "scope": "fn-validate-passenger-status",
+      "active": false
+    }
+  ],
+  "dynamic-ui": [
+    {
+      "id": 1,
+      "title": "Service Plugin",
+      "type": "services",
+      "toggles": [
+        {
+          "key": "service-flight",
+          "label": "Flight"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Function Plugin",
+      "type": "functions",
+      "toggles": [
+        {
+          "key": "fn-validate-passenger-status",
+          "label": "Validator"
+        }
+      ]
+    }
+  ],
+  "bootstrap-remotes": {}
+}
